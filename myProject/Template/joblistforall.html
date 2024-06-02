@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    
+<h2>Job List</h2>
+
+<table>
+  <tr>
+    <th>Job Title</th>
+    <th>Description</th>
+    <th>Salary</th>
+    <th>Deadline</th>
+    <th>Company Name</th>
+    <th> Actions </th>
+  </tr>
+  
+  {% for i in myjob %}
+    
+    
+  <tr>
+    <td> {{i.job_title}} </td>
+    <td> {{i.company_description}} </td>
+    <td> {{i.salary}} </td>
+    <td> {{i.deadline}} </td>
+    <td> {{i.company_name}} </td>
+    <td>
+        <a href="{% url 'viewjob' i.id %}">View</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+
+<ul>
+    <li><a href="{% url 'dashboard' %}">Home</a></li>
+    
+    {% if user.role == 'recruiter' %}
+    <li><a href="{% url 'addjob' %}">Addjob</a></li>
+
+        
+    {% endif %}
+        
+    <li><a href="#contact">Job List</a></li>
+    <li><a href="{% url 'resumeprofile' %}">Profile</a></li>
+    <li style="float:right"><a class="active" href="{% url 'signout' %}">Log Out</a></li>
+  </ul>
+  
